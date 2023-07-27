@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/recievePaymentFragment"
+        android:name="com.bet.mpos.ui.payment.recievePayment.RecievePaymentFragment"
+        android:label="Receber Pagamento"
+        tools:layout="@layout/fragment_recieve_payment">
+        <action
+            android:id="@+id/action_recievePaymentFragment_to_meansOfPaymentFragment"
+            app:destination="@id/meansOfPaymentFragment" />
+        <action
+            android:id="@+id/action_recievePaymentFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+        <action
+            android:id="@+id/action_recievePaymentFragment_to_transactionPixFragment"
+            app:destination="@id/transactionPixFragment"
+            app:popUpTo="@id/mobile_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/meansOfPaymentFragment"
+        android:name="com.bet.mpos.ui.payment.meansOfPayment.MeansOfPaymentFragment"
+        android:label="Meio de pagamento"
+        tools:layout="@layout/fragment_means_of_payment" >
+        <action
+            android:id="@+id/action_meansOfPaymentFragment_to_installmentsFragment"
+            app:destination="@id/installmentsFragment" />
+        <action
+            android:id="@+id/action_meansOfPaymentFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment"
+            app:popUpTo="@id/mobile_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.bet.mpos.ui.home.HomeFragment"
+        android:label="    "
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_productObjectFragment"
+            app:destination="@id/productObjectFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_betDocumentFragment"
+            app:destination="@id/betDocumentFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_saleFragment"
+            app:destination="@id/saleFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_recievePaymentFragment2"
+            app:destination="@id/recievePaymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_report"
+        android:name="com.bet.mpos.ui.menu.report.ReportFragment"
+        android:label="     "
+        tools:layout="@layout/fragment_report">
+        <action
+            android:id="@+id/action_nav_report_to_mySalesFragment"
+            app:destination="@id/mySalesFragment" />
+        <action
+            android:id="@+id/action_nav_report_to_viewPrintFragment"
+            app:destination="@id/viewPrintFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/installmentsFragment"
+        android:name="com.bet.mpos.ui.payment.installments.InstallmentsFragment"
+        android:label="Parcelas"
+        tools:layout="@layout/fragment_installments">
+        <action
+            android:id="@+id/action_installmentsFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment"
+            app:popUpTo="@id/mobile_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="com.bet.mpos.ui.payment.transaction.TransactionFragment"
+        android:label="Receber Pagamento"
+        tools:layout="@layout/fragment_transactions" >
+        <action
+            android:id="@+id/action_transactionFragment_to_transactionCompletedFragment"
+            app:destination="@id/transactionCompletedFragment"
+            app:popUpTo="@id/mobile_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_transactionFragment_to_transactionFailureFragment"
+            app:destination="@id/transactionFailureFragment"
+            app:popUpTo="@id/mobile_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionCompletedFragment"
+        android:name="com.bet.mpos.ui.payment.transactionCompleted.TransactionCompletedFragment"
+        android:label="TransactionCompletedFragment"
+        tools:layout="@layout/fragment_transaction_completed" >
+        <action
+            android:id="@+id/action_transactionCompletedFragment_to_nav_value_entry"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/mobile_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_transactionCompletedFragment_to_betPrintFragment"
+            app:destination="@id/betPrintFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionFailureFragment"
+        android:name="com.bet.mpos.ui.payment.transactionFailure.TransactionFailureFragment"
+        android:label="TransactionFailureFragment"
+        tools:layout="@layout/fragment_transaction_failure" >
+        <action
+            android:id="@+id/action_transactionFailureFragment_to_nav_value_entry"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/mobile_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_transactionFailureFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment"
+            app:popUpTo="@id/mobile_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_transactionFailureFragment_to_transactionPixFragment"
+            app:destination="@id/transactionPixFragment"
+            app:popUpTo="@id/mobile_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionPixFragment"
+        android:name="com.bet.mpos.ui.payment.transactionPix.TransactionPixFragment"
+        android:label="Receber Pagamento"
+        tools:layout="@layout/fragment_transaction_pix">
+        <action
+            android:id="@+id/action_transactionPixFragment_to_transactionCompletedFragment"
+            app:destination="@id/transactionCompletedFragment"
+            app:popUpTo="@id/mobile_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_transactionPixFragment_to_transactionFailureFragment"
+            app:destination="@id/transactionFailureFragment"
+            app:popUpTo="@id/mobile_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mySalesFragment"
+        android:name="com.bet.mpos.ui.menu.report.mySales.MySalesFragment"
+        android:label="Minhas vendas"
+        tools:layout="@layout/fragment_my_sales">
+        <action
+            android:id="@+id/action_mySalesFragment_to_fragmentSaleDetail"
+            app:destination="@id/fragmentSaleDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPrintFragment"
+        android:name="com.bet.mpos.ui.menu.report.viewPrint.ViewPrintFragment"
+        android:label="Impressão"
+        tools:layout="@layout/fragment_view_print" />
+    <!--<fragment
+        android:id="@+id/bankSlipPaymentFragment"
+        android:name="com.pixcred.mpos.ui.menu.bankSlip.BankSlipPaymentFragment"
+        android:label="BankSlipPaymentFragment"
+        tools:layout="@layout/fragment_bank_slip_payment"/>-->
+    <fragment
+        android:id="@+id/fragmentSaleDetail"
+        android:name="com.bet.mpos.ui.menu.report.saleDetail.FragmentSaleDetail"
+        android:label="Detalhe da venda"
+        tools:layout="@layout/fragment_sale_detail">
+        <action
+            android:id="@+id/action_fragmentSaleDetail_to_nav_report"
+            app:destination="@id/nav_report"
+            app:popUpTo="@id/nav_report"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_receipt_reprint"
+        android:name="com.bet.mpos.ui.menu.receiptReprint.ReceiptReprintFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_receipt_reprint" />
+    <fragment
+        android:id="@+id/nav_update"
+        android:name="com.bet.mpos.ui.menu.update.UpdateFragment"
+        android:label="Atualização"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_nav_update_to_nav_value_entry"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/mobile_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeEstablishmentFragment"
+        android:name="com.bet.mpos.ui.menu.ajust.changeEstablishment.ChangeEstablishmentFragment"
+        android:label="Trocar estabelecimento"
+        tools:layout="@layout/fragment_change_establishment" />
+    <fragment
+        android:id="@+id/nav_ajusts"
+        android:name="com.bet.mpos.ui.menu.ajust.AjustsFragment"
+        android:label="Ajustes"
+        tools:layout="@layout/fragment_ajusts">
+        <action
+            android:id="@+id/action_nav_ajusts_to_changeEstablishmentFragment"
+            app:destination="@id/changeEstablishmentFragment" />
+        <action
+            android:id="@+id/action_nav_ajusts_to_updateConfigsFragment"
+            app:destination="@id/updateConfigsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateConfigsFragment"
+        android:name="com.bet.mpos.ui.menu.ajust.updateConfigs.UpdateConfigsFragment"
+        android:label="Atualizar configurações"
+        tools:layout="@layout/fragment_update_configs" />
+    <fragment
+        android:id="@+id/betFragment"
+        android:name="com.bet.mpos.ui.bet.BetFragment"
+        android:label="fragment_bet"
+        tools:layout="@layout/fragment_bet" />
+    <fragment
+        android:id="@+id/betDocumentFragment"
+        android:name="com.bet.mpos.ui.bet.betDocument.BetDocumentFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_bet_document" >
+        <action
+            android:id="@+id/action_betDocumentFragment_to_recievePaymentFragment"
+            app:destination="@id/recievePaymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productObjectFragment"
+        android:name="com.bet.mpos.ui.bet.objectFragment.BetObjectFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_bet_object">
+        <action
+            android:id="@+id/action_productObjectFragment_to_betDocumentFragment"
+            app:destination="@id/betDocumentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/betPrintFragment"
+        android:name="com.bet.mpos.ui.bet.BetPrint.BetPrintFragment"
+        android:label="fragment_bet_print"
+        tools:layout="@layout/fragment_bet_print" >
+        <action
+            android:id="@+id/action_betPrintFragment_to_nav_value_entry"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/saleFragment"
+        android:name="com.bet.mpos.ui.sale.SaleFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_sale">
+        <action
+            android:id="@+id/action_saleFragment_to_recievePaymentFragment"
+            app:destination="@id/recievePaymentFragment" />
+    </fragment>
+</navigation>

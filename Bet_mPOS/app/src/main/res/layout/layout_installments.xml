@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00FFFFFF"
+    android:paddingLeft="20dp"
+    android:paddingTop="24dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="24dp">
+
+    <TextView
+        android:id="@+id/tv_total_fees"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#00FFFFFF"
+        android:fontFamily="@font/montserrat"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_installment_value"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_installment_value"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="R$ 99.000,00" />
+
+    <TextView
+        android:id="@+id/tv_installment_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_weight="1"
+        android:background="#00FFFFFF"
+        android:fontFamily="@font/montserrat"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_installment"
+        app:layout_constraintStart_toEndOf="@+id/tv_installment"
+        app:layout_constraintTop_toTopOf="@+id/tv_installment"
+        tools:text="R$ 99.000,00" />
+
+    <TextView
+        android:id="@+id/tv_installment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#00FFFFFF"
+        android:fontFamily="@font/montserrat"
+        android:text="18x"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

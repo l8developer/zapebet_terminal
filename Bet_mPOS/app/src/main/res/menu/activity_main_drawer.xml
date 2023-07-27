@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:fontFamily="@font/montserrat_bold2"
+            android:icon="@drawable/baseline_home_24"
+            android:title="@string/menu_home" />
+        <!--        <item-->
+        <!--            android:id="@+id/nav_bank_slip"-->
+        <!--            android:enabled="true"-->
+        <!--            android:fontFamily="@font/montserrat_bold2"-->
+        <!--            android:icon="@drawable/ic_outline_document_scanner_24"-->
+        <!--            android:title="@string/menu_bank_slip"-->
+        <!--            android:visible="true" />-->
+        <item
+            android:id="@+id/nav_report"
+            android:fontFamily="@font/montserrat_bold2"
+            android:icon="@drawable/ic_outline_description_24"
+            android:title="@string/menu_report" />
+    </group>
+    <group >
+        <item
+            android:id="@+id/nav_receipt_reprint"
+            android:icon="@drawable/ic_outline_receipt_24"
+            android:title="@string/menu_reprint" />
+        <item
+            android:id="@+id/productObjectFragment"
+            android:icon="@drawable/money"
+            android:title="Aposta Esportiva"
+            android:visible="false" />
+        <item
+            android:id="@+id/serviceFragment"
+            android:icon="@drawable/technical_service"
+            android:title="Prestação de serviço"
+            android:visible="false" />
+        <item
+            android:id="@+id/nav_update"
+            android:icon="@drawable/baseline_system_update_24"
+            android:title="@string/menu_update" />
+        <item
+            android:id="@+id/nav_ajusts"
+            android:icon="@drawable/baseline_miscellaneous_services_24"
+            android:title="@string/menu_ajust"
+            android:visible="false" />
+
+    </group>
+
+</menu>

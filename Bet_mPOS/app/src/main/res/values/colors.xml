@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="positive">#4CAF50</color>
+    <color name="positive_disable">#334CAF50</color>
+    <color name="negative">#F44336</color>
+    <color name="negative_disable">#33F44336</color>
+
+    <color name="error">#FD5839</color>
+    <color name="success">#24DD7D</color>
+
+    <color name="color_primary">#25D266</color>
+    <color name="color_primary_disable">#FFED8C</color>
+    <color name="color_transparent">#00FFFFFF</color>
+
+    <color name="black">#FF000000</color>
+    <color name="smoke">#212121</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="lightgray">#D3D3D3</color>
+    <color name="pixcredGray">#CCCCCC</color>
+    <color name="text_disable">#FFCDCDCD</color>
+    <color name="background_1">#F3F2F7</color>
+    <color name="background_2">#dbdade</color>
+    <color name="light_blue_400">#FF29B6F6</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="gray_400">#FFBDBDBD</color>
+    <color name="gray_600">#FF757575</color>
+</resources>

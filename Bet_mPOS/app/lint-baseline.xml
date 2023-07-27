@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 7.4.2" type="baseline" client="gradle" dependencies="false" name="AGP (7.4.2)" variant="fatal" version="7.4.2">
+
+    <issue
+        id="UnknownId"
+        message="The id &quot;`btn_continue_f`&quot; is not defined anywhere."
+        errorLine1="        app:layout_constraintBottom_toTopOf=&quot;@+id/btn_continue_f&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_financial_agent.xml"
+            line="15"
+            column="9"/>
+    </issue>
+
+</issues>

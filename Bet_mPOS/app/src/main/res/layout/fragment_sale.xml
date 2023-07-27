@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_value_entry"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_1"
+    tools:context=".ui.sale.SaleFragment">
+
+    <LinearLayout
+        android:id="@+id/layout_value_entry"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#F3F2F7"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/realtiveLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/rs"
+                android:digits="15"
+                android:fontFamily="@font/montserrat"
+                android:numeric="decimal"
+                android:shadowColor="#1B1A1A"
+                android:text="0,00"
+                android:textAlignment="textEnd"
+                android:textColor="#1B1A1A"
+                android:textSize="56sp" />
+
+            <TextView
+                android:id="@+id/rs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/montserrat"
+                android:text="R$"
+                android:textColor="#222222"
+                android:textSize="26sp" />
+
+        </RelativeLayout>
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal|top"
+            android:padding="16dp">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="91dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_1"
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:layout_margin="4dp"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="32dp" />
+
+                <Button
+                    android:id="@+id/btn_2"
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:layout_margin="4dp"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textSize="32dp" />
+
+                <Button
+                    android:id="@+id/btn_3"
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:layout_margin="4dp"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textSize="32dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_4"
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:layout_margin="4dp"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textSize="32dp" />
+
+                <Button
+                    android:id="@+id/btn_5"
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:layout_margin="4dp"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text="5"
+                    android:textSize="32dp" />
+
+                <Button
+                    android:id="@+id/btn_6"
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:layout_margin="4dp"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textSize="32dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_7"
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:layout_margin="4dp"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text="7"
+                    android:textSize="32dp" />
+
+                <Button
+                    android:id="@+id/btn_8"
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:layout_margin="4dp"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text="8"
+                    android:textSize="32dp" />
+
+                <Button
+                    android:id="@+id/btn_9"
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:layout_margin="4dp"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
+                    android:text="9"
+                    android:textSize="32dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textAlignment="center">
+
+                <ImageButton
+                    android:id="@+id/btn_remove"
+                    android:layout_width="100dp"
+                    android:layout_height="88dp"
+                    android:backgroundTint="#D6D6D6"
+                    android:tint="#000"
+                    app:srcCompat="@drawable/ic_delete"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <Button
+                    android:id="@+id/btn_0"
+                    android:layout_width="100dp"
+                    android:layout_height="76dp"
+                    android:layout_margin="4dp"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:text="0"
+                    android:textSize="32dp" />
+
+                <ImageButton
+                    android:id="@+id/btn_confirm"
+                    android:layout_width="100dp"
+                    android:layout_height="88dp"
+                    android:backgroundTint="#0B960B"
+                    android:tint="#FFFFFF"
+                    app:srcCompat="@drawable/ic_done"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

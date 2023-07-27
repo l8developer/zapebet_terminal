@@ -1,0 +1,51 @@
+<resources>
+    <!--    <string name="app_name">Pixcred mPOS</string>-->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_bank_slip">Pagamentos</string>
+    <string name="menu_report">Minhas vendas</string>
+    <string name="menu_reprint">Reimpressão via</string>
+    <string name="menu_update">Atualização</string>
+    <string name="menu_ajust">Ajustes</string>
+
+    <!-- Credential Name -->
+    <string name="saved_marketplace_id">MarketplaceId</string>
+    <string name="saved_seller_id">SellerId</string>
+    <string name="saved_terminal">Terminal</string>
+    <string name="saved_access_key">AccessKey</string>
+    <string name="saved_seller_name">SellerName</string>
+
+    <string name="total_amount">"%,.2f"</string>
+
+    <!--    EncryptedSharedPreferences-->
+    <string name="saved_custumer_data_file_name">v1</string>
+    <string name="saved_extra_file_name">v2</string>
+    <string name="saved_fee_file_name">v2</string>
+    <string name="saved_transaction_data_file_name">v3</string>
+    <string name="saved_betlistitem_file_name">v323243</string>
+    <string name="saved_bet_game_file_name">gsrhdhtfhfg</string>
+    <string name="saved_bet_document_file_name">gdrtfh56</string>
+
+
+    <!--    Message errors-->
+    <string name="value_minimal_error_title">Valor minímo</string>
+    <string name="value_minimal_error_sub_title">O valor minímo da transação deve ser de R$ 1,00</string>
+    <string name="error_conection_message">Sem conexão com a internet.</string>
+    <string name="error_generic_api">Falha na conexão.</string>
+    <string name="error_generic">Algo inesperado aconteceu.</string>
+    <string name="error_print">Erro na impressão.</string>
+
+    <array name="report_days_array">
+        <item>Hoje</item>
+        <item>Ontem</item>
+        <item>7 Dias</item>
+        <item>30 Dias</item>
+    </array>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

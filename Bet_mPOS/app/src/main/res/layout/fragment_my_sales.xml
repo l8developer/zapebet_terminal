@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layout_my_sales"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="top"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_transactions_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:itemCount="20"
+            tools:listitem="@layout/layout_report_sales" />
+
+        <Button
+            android:id="@+id/btn_generate_print"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_primary"
+            android:enabled="false"
+            android:text="Gerar impresão"
+            android:textAllCaps="false"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_my_sales_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_button_white"
+        android:elevation="2dp"
+        android:padding="30dp"
+        android:text="@string/error_generic_api"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/layout_my_sales"
+        tools:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/pb_my_sales"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/black"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

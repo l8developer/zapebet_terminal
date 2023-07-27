@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_1"
+    tools:context=".ui.login.homeLogin.HomeLoginFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btn_habilitar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_primary"
+            android:fontFamily="@font/montserrat_bold2"
+            android:padding="16dp"
+            android:text="Habilitar"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btn_network_config"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/border_primary"
+            android:fontFamily="@font/montserrat_bold2"
+            android:padding="16dp"
+            android:text="Configuração de rede"
+            android:textColor="@color/black" />
+    </LinearLayout>
+</FrameLayout>

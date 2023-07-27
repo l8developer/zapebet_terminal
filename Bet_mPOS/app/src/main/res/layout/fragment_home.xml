@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <ScrollView
+        android:id="@+id/layout_home_options"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_sale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/border_button_white"
+                android:backgroundTint="#FFF"
+                android:drawableLeft="@drawable/ic_debit_small"
+                android:fontFamily="@font/montserrat"
+                android:paddingLeft="20dp"
+                android:paddingTop="32dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="32dp"
+                android:text="  Vender"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <Button
+                android:id="@+id/btn_bet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/border_button_white"
+                android:backgroundTint="#FFF"
+                android:drawableLeft="@drawable/money"
+                android:fontFamily="@font/montserrat"
+                android:paddingLeft="20dp"
+                android:paddingTop="32dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="32dp"
+                android:text="  Aposta Esportiva"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <Button
+                android:id="@+id/btn_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/border_button_white"
+                android:backgroundTint="#FFF"
+                android:drawableLeft="@drawable/technical_service"
+                android:fontFamily="@font/montserrat"
+                android:paddingLeft="20dp"
+                android:paddingTop="32dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="32dp"
+                android:text="  Prestação de serviço"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

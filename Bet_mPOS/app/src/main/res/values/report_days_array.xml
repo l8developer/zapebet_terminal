@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="report_days">
+        <item>HOJE</item>
+        <item>ONTEM</item>
+        <item>7 DIAS</item>
+        <item>30 DIAS</item>
+    </string-array>
+</resources>

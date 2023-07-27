@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/linearLayout15"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/layout_product_items"
+        app:layout_constraintStart_toStartOf="@+id/layout_product_items"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_outline"
+            android:backgroundTint="#2a4142"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="8dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="6dp">
+
+            <TextView
+                android:id="@+id/tv_day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_black"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                tools:text="01" />
+
+            <TextView
+                android:id="@+id/tv_month"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                tools:text="JUL." />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold2"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                tools:text="SÃO PAULO X FLUMINENSE" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:id="@+id/tv_city"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_date"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Itaipava Arena Fonte Nova Arena Fonte Nova" />
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
+                    android:layout_marginEnd="2dp"
+                    android:background="@drawable/border_green"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="01/07 16:00" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_product_items"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout15">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn_pos_0"
+            android:layout_width="112dp"
+            android:layout_height="155dp"
+            android:background="@drawable/border_outline"
+            android:backgroundTint="#2a4142"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/tv_name_bet1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="São Paulo" />
+
+            <ImageView
+                android:id="@+id/iv_bet1"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_marginTop="4dp"
+                android:foregroundGravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name_bet1"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/smile_money" />
+
+                <TextView
+                    android:id="@+id/tv_odd_bet1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    tools:text="2.00" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn_pos_1"
+            android:layout_width="112dp"
+            android:layout_height="155dp"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/border_outline"
+            android:backgroundTint="#2a4142"
+            android:padding="4dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayout13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textView54"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_black"
+                    android:text="X"
+                    android:textAlignment="center"
+                    android:textColor="#2a4142"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView58"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_white"
+                    android:backgroundTint="#2a4142"
+                    android:fontFamily="@font/montserrat"
+                    android:paddingStart="9dp"
+                    android:paddingTop="3dp"
+                    android:paddingEnd="9dp"
+                    android:paddingBottom="3dp"
+                    android:text="Empate"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/smile_money" />
+
+                <TextView
+                    android:id="@+id/tv_odd_bet_draw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    tools:text="2.00" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn_pos_2"
+            android:layout_width="112dp"
+            android:layout_height="155dp"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/border_outline"
+            android:backgroundTint="#2a4142"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/tv_name_bet2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="São Paulo" />
+
+            <ImageView
+                android:id="@+id/iv_bet2"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_marginTop="4dp"
+                android:foregroundGravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name_bet2"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView92"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/smile_money" />
+
+                <TextView
+                    android:id="@+id/tv_odd_bet2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    tools:text="2.00" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

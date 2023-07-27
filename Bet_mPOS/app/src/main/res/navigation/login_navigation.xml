@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_navigation"
+    app:startDestination="@id/homeLoginFragment">
+
+    <fragment
+        android:id="@+id/homeLoginFragment"
+        android:name="com.bet.mpos.ui.login.homeLogin.HomeLoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_home_login">
+        <action
+            android:id="@+id/action_homeLoginFragment_to_enableFragment"
+            app:destination="@id/enableFragment" />
+        <action
+            android:id="@+id/action_homeLoginFragment_to_networkFragment"
+            app:destination="@id/networkFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/enableFragment"
+        android:name="com.bet.mpos.ui.login.enable.EnableFragment"
+        android:label="Habilitar"
+        tools:layout="@layout/fragment_enable" />
+    <fragment
+        android:id="@+id/apnConfigurationFragment"
+        android:name="com.bet.mpos.ui.login.apnConfiguration.ApnConfigurationFragment"
+        android:label="Apn"
+        tools:layout="@layout/fragment_apn_configuration" >
+        <action
+            android:id="@+id/action_apnConfigurationFragment_to_homeLoginFragment"
+            app:destination="@id/homeLoginFragment"
+            app:popUpTo="@id/login_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/networkFragment"
+        android:name="com.bet.mpos.ui.login.networkConfiguration.NetworkFragment"
+        android:label="Configurações de rede"
+        tools:layout="@layout/fragment_network">
+        <action
+            android:id="@+id/action_networkFragment_to_apnConfigurationFragment"
+            app:destination="@id/apnConfigurationFragment" />
+    </fragment>
+</navigation>

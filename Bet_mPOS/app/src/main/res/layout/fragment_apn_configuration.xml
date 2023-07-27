@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_1"
+    android:padding="20dp"
+    tools:context=".ui.login.apnConfiguration.ApnConfigurationFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/montserrat_bold2"
+                android:text="Nome"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_name_apn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/border_primary"
+                android:ems="10"
+                android:hint="Nome da operadora"
+                android:inputType="textPersonName"
+                android:paddingStart="16dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat_bold2"
+                android:text="APN"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_host_apn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/border_primary"
+                android:ems="10"
+                android:hint="URL do código da operadora"
+                android:inputType="textPersonName"
+                android:paddingStart="16dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat_bold2"
+                android:text="Nome do usuário"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_user_apn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/border_primary"
+                android:ems="10"
+                android:hint="Normalmente o nome da operadora"
+                android:inputType="textPersonName"
+                android:paddingStart="16dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat_bold2"
+                android:text="Senha"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_password_apn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/border_primary"
+                android:ems="10"
+                android:hint="Normalmente o nome da operadora"
+                android:inputType="textPassword"
+                android:paddingStart="16dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat_bold2"
+                android:hint="Nome da operadora"
+                android:text="Tipo de autenticação"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Spinner
+                    android:id="@+id/spn_auth_type_apn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="45dp"
+                    android:background="@drawable/border_primary"
+
+                    android:dropDownSelector="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:listitem="@layout/layout_spinner_item" />
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="60dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/border_primary"
+                    android:paddingStart="18dp"
+                    android:paddingEnd="2dp"
+                    android:src="@drawable/baseline_arrow_drop_down_24"
+                    android:tint="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/btn_confirmar_apn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/border_primary"
+                android:text="confirmar"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

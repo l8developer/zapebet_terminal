@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="24dp"
+    android:paddingTop="24dp"
+    android:paddingRight="24dp"
+    android:paddingBottom="24dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Valor minímo"
+            android:textColor="#000000"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivTransactions" />
+
+        <TextView
+            android:id="@+id/tv_sub_title"
+            android:layout_width="240dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/montserrat"
+            android:text="O valor minímo da transação deve ser de R$ 1,00"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            app:lineHeight="22dp" />
+
+        <Button
+            android:id="@+id/btn_cancelar"
+            android:layout_width="160dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="#DADADA"
+            android:fontFamily="@font/montserrat"
+            android:text="Voltar"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sub_title" />
+
+        <ImageView
+            android:id="@+id/ivTransactions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_error" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
