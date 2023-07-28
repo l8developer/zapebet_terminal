@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 PackageManager packageManager = getPackageManager();
-                String packageName = "com.bet.mpos"; // Pacote do aplicativo de destino
+                String packageName = "com.bet.mpos.debug"; // Pacote do aplicativo de destino
                 Intent intent = packageManager.getLaunchIntentForPackage(packageName);
 
                 if (intent != null) {
@@ -175,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
                     File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "/bet-release.apk");
 
                     if (file.exists()) {
+                        Log.d("PATH", file.getPath());
                         String res = SysTester.getInstance().installApp(file.getPath());
                         if (res == "instalado com sucesso") {
                             runOnUiThread(new Runnable() {
@@ -275,7 +276,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         PackageManager packageManager = getPackageManager();
-                        String packageName = "com.bet.mpos"; // Pacote do aplicativo de destino
+                        String packageName = "com.bet.mpos.debug"; // Pacote do aplicativo de destino
                         Intent intent = packageManager.getLaunchIntentForPackage(packageName);
 
                         if (intent != null) {
@@ -322,7 +323,8 @@ public class MainActivity extends AppCompatActivity {
                     UpdateResponse data = gson.fromJson(Functions.decrypt(response.ct, response.iv), UpdateResponse.class);
                     System.out.println(data.toString());
                     if(data != null) {
-                        download(data.link_download);
+//                        download(data.link_download);
+                        download("https://xas-presave-public.s3.us-west-2.amazonaws.com/app/Pixcred_1.0.3.apk");
                     }
                     else{
                         state(4);
