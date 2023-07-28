@@ -27,20 +27,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:indeterminateTint="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/bet_print"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_user_message_bet_print" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/bet_print"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/border_primary"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/border_outline_black"
+        android:backgroundTint="@color/color_primary"
         android:text="Tentar novamente"
         android:textAllCaps="false"
+        android:textColor="@color/color_primary"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_home_bet_print"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:visibility="visible" />
@@ -49,9 +52,11 @@
         android:id="@+id/btn_home_bet_print"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/border_primary"
-        android:text="Voltar"
+        android:text="Voltar para o início"
         android:textAllCaps="false"
+        android:textColor="@color/button_text_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

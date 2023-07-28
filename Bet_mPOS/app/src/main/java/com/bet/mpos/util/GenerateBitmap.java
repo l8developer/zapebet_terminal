@@ -23,7 +23,7 @@ public class GenerateBitmap {
 
     private String TAG = "GenerateBitmap";
 
-    public static Bitmap drawBetProof(String document, String game, String location, String date){
+    public static Bitmap drawBetProof(String document, String game, String location, String date) {
         Context context = BetApp.getAppContext();
         Resources resources = context.getResources();
         float scale = resources.getDisplayMetrics().density;
@@ -215,7 +215,7 @@ public class GenerateBitmap {
         valorTotal = "R$ "+Functions.int_to_real(cred_total+deb_total+pix_total);
         qtdTotalTransacoes = cred_qtde+deb_qtde+pix_qtde+"";
 
-        Bitmap logo_pixcred_src = BitmapFactory.decodeResource(context.getResources(), R.drawable.topo_comprovante_376);
+        Bitmap logo_pixcred_src = BitmapFactory.decodeResource(context.getResources(), R.drawable.zape_bet);
         int logo_pixcred_height, nome_fantasia_pos_to_top, data_pos_to_top, endereco_pos_to_top, numero_serie_pos_to_top,
                 relatorio_vendas_pos_to_top, todas_vend_pos_to_top, range_data_pos_to_top, x, y, width, height;
 
@@ -433,8 +433,7 @@ public class GenerateBitmap {
         return bitmap;
     }
 
-    public static Bitmap drawSaleReceipt(SmartPOSPaymentResponse response, String typeSale, String receiptType)
-    {
+    public static Bitmap drawSaleReceipt(SmartPOSPaymentResponse response, String typeSale, String receiptType) {
         Context context = BetApp.getAppContext();
 
         String sellerName = response.getTransactionData().getSellerName();

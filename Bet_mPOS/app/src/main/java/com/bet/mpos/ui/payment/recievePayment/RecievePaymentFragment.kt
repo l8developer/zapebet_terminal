@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.bet.mpos.BuildConfig
 import com.bet.mpos.databinding.FragmentRecievePaymentBinding
 import com.zoop.sdk.Zoop
 import com.zoop.sdk.api.Callback

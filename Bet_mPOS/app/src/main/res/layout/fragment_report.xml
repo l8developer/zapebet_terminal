@@ -442,11 +442,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
+                        android:layout_marginBottom="4dp"
                         android:background="@drawable/border_primary"
                         android:enabled="false"
                         android:fontFamily="@font/montserrat_bold2"
                         android:text="Imprimir Resumo"
                         android:textAllCaps="false"
+                        android:textColor="@color/button_text_color"
                         android:textStyle="bold" />
 
                 </LinearLayout>

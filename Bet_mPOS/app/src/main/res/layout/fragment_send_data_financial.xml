@@ -64,6 +64,7 @@
         android:layout_marginBottom="3dp"
         android:background="@drawable/border_primary"
         android:text="Voltar para o início"
+        android:textColor="@color/button_text_color"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/btn_continue_send_data"
         app:layout_constraintEnd_toEndOf="parent"

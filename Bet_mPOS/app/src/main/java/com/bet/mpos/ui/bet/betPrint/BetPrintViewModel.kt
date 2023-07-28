@@ -1,6 +1,7 @@
 package com.bet.mpos.ui.bet.BetPrint
 
 import android.util.Log
+import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,6 +20,7 @@ import com.bet.mpos.util.CPFUtil
 import com.bet.mpos.util.ESharedPreferences
 import com.bet.mpos.util.GenerateBitmap
 import com.bet.mpos.util.pax.PrinterTester
+import com.google.api.client.json.Json
 import com.zoop.sdk.api.collection.TransactionData
 import retrofit2.Call
 import retrofit2.Response
@@ -57,20 +59,21 @@ class BetPrintViewModel : ViewModel() {
     private fun registerBet(betGame: BetGame, customer: BetCustomerRegistration, transactionData: TransactionData)
     {
         _loading.value = true
+
         val retrofit = APIClient(BuildConfig.API_BET_URL).client
         val service = retrofit.create(APIInterface::class.java)
-        val responseCall: Call<BetRegistration> = service.register_bet(BuildConfig.ZB_TOKEN, betGame.id, customer.uuid, transactionData.value!!)
+        val responseCall: Call<Json> = service.register_bet(BuildConfig.ZB_TOKEN, betGame.id, customer.uuid, transactionData.value!!)
 
         println("option: " + betGame.id)
         println("customer: " + customer.uuid)
-        println("value: " + transactionData.value)
+        println("value: " + transactionData.value!!)
 
         if (responseCall != null)
         {
-            responseCall.enqueue(object : retrofit2.Callback<BetRegistration> {
+            responseCall.enqueue(object : retrofit2.Callback<Json> {
                 override fun onResponse(
-                    call: Call<BetRegistration>?,
-                    response: Response<BetRegistration>
+                    call: Call<Json>?,
+                    response: Response<Json>
                 ) {
                     if (response.isSuccessful)
                     {
@@ -92,11 +95,12 @@ class BetPrintViewModel : ViewModel() {
                         }
                         _error.value = true
                         handleFail()
+                        Log.e("Bet Registration onFailure: ", response.toString())
                     }
                     _loading.value = false
                 }
 
-                override fun onFailure(call: Call<BetRegistration>, t: Throwable) {
+                override fun onFailure(call: Call<Json>, t: Throwable) {
                     Log.e("Bet Registration onFailure: ", t.message.toString())
                     //handleFailed(PixcredApp.getAppContext().getString(R.string.error_generic_api))
                     _loading.value = false

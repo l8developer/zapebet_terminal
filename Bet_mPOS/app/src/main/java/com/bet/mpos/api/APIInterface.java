@@ -4,6 +4,7 @@ import com.bet.mpos.api.pojo.APIResponse;
 import com.bet.mpos.api.pojo.GameOddsResponse;
 import com.bet.mpos.objects.BetCustomerRegistration;
 import com.bet.mpos.objects.BetRegistration;
+import com.google.api.client.json.Json;
 
 import java.util.ArrayList;
 
@@ -118,10 +119,10 @@ public interface APIInterface {
 
     @FormUrlEncoded
     @POST("bot/register_bet_terminal")
-    Call<BetRegistration> register_bet(@Header("zb-token") String zbToken,
-                                       @Field("option") String option,
-                                       @Field("customer") String customer,
-                                       @Field("value") int value
+    Call<Json> register_bet(@Header("zb-token") String zbToken,
+                            @Field("option") String option,
+                            @Field("customer") String customer,
+                            @Field("value") int value
     );
 
     @GET("bot/game_and_odds")

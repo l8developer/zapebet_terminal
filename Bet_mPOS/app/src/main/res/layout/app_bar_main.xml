@@ -18,11 +18,12 @@
             android:layout_gravity="center"
             android:background="@color/color_primary"
             android:gravity="center"
-            app:titleCentered="true"
             android:textAlignment="gravity"
             app:popupTheme="@style/Theme.PixcredMPOS"
+            app:titleCentered="true"
             app:titleMarginStart="45dp"
-            app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium" />
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:titleTextColor="@color/white" />
 
 
 

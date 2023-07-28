@@ -5,6 +5,8 @@
     <color name="negative">#F44336</color>
     <color name="negative_disable">#33F44336</color>
 
+    <color name="button_text_color">#FFF</color>
+
     <color name="error">#FD5839</color>
     <color name="success">#24DD7D</color>
 

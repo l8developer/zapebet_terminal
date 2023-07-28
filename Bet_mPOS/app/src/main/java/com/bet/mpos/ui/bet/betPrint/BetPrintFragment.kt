@@ -71,7 +71,7 @@ class BetPrintFragment : Fragment() {
             }else{
                 binding.progressBar2.visibility = View.INVISIBLE
                 binding.btnHomeBetPrint.visibility = View.VISIBLE
-                //binding.tvUserMessageBetPrint.visibility = View.VISIBLE
+                binding.tvUserMessageBetPrint.visibility = View.VISIBLE
             }
         }
 

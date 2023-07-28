@@ -9,6 +9,7 @@ import android.os.Looper;
 import android.util.Log;
 import android.widget.ImageView;
 
+import com.caverock.androidsvg.RenderOptions;
 import com.caverock.androidsvg.SVG;
 
 import java.io.InputStream;
@@ -78,7 +79,6 @@ public class DownloadImageFromInternet /*extends AsyncTask<String, Void, Bitmap>
 
                     Picture picture = svg.renderToPicture(width, height);
                     bimage = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-
                     Canvas canvas = new Canvas(bimage);
                     canvas.drawPicture(picture);
 

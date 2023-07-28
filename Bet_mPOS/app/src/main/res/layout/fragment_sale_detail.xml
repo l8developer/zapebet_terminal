@@ -261,7 +261,7 @@
                 android:fontFamily="@font/montserrat_bold2"
                 android:text="Voltar para início"
                 android:textAllCaps="false"
-                android:textColor="@color/black" />
+                android:textColor="@color/button_text_color" />
         </LinearLayout>
     </ScrollView>
 

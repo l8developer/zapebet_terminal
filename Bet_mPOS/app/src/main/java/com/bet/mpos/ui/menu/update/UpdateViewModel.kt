@@ -112,7 +112,7 @@ class UpdateViewModel : ViewModel() {
             }
             "Wi-Fi" -> {
                 val packageManager = requireActivity.packageManager
-                val packageName = "com.pixcred.update" // Pacote do aplicativo de destino
+                val packageName = "com.bet.update" // Pacote do aplicativo de destino
                 val intent = packageManager?.getLaunchIntentForPackage(packageName)
 
                 if (intent != null) {
