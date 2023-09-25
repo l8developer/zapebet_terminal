@@ -7,12 +7,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bet.mpos.R
 import com.bet.mpos.adapters.AdapterProducts
 import com.bet.mpos.databinding.FragmentBetObjectBinding
+import com.google.android.material.tabs.TabLayout
 
 class BetObjectFragment : Fragment() {
 
@@ -40,18 +42,11 @@ class BetObjectFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(requireActivity()).get(BetObjectViewModel::class.java)
 
-        viewModel.start(findNavController(), requireActivity(), arguments)
+        viewModel.start(findNavController(), requireActivity(), arguments, binding.tvLeague)
 
         observeViewModel()
+        changeScrollViewPosition(binding.hsvBtn5)
         buttons()
-
-    }
-
-    private fun buttons() {
-        binding.tlProductObject.addTab(binding.tlProductObject.newTab().setText("Brasileirão"))
-        binding.tlProductObject.addTab(binding.tlProductObject.newTab().setText("Em breve"))
-        binding.tlProductObject.addTab(binding.tlProductObject.newTab().setText("Em breve"))
-
 
     }
 
@@ -65,7 +60,75 @@ class BetObjectFragment : Fragment() {
             binding.rvProduct.adapter = adapter
 
         }
+
+        viewModel.leagueList.observe(viewLifecycleOwner){ list ->
+            binding.tlProductObject.removeAllTabs()
+            list.forEach { name ->
+                binding.tlProductObject.addTab(binding.tlProductObject.newTab().setText(name))
+            }
+        }
+
+        viewModel.loading.observe(viewLifecycleOwner){ loading ->
+            if(loading)
+            {
+                binding.rvProduct.visibility = View.GONE
+                binding.pbGames.visibility = View.VISIBLE
+            }
+            else
+            {
+                binding.rvProduct.visibility = View.VISIBLE
+                binding.pbGames.visibility = View.GONE
+            }
+        }
     }
+
+    private fun buttons() {
+        binding.tlProductObject.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                viewModel.tabChanged(tab.position)
+            }
+            override fun onTabUnselected(tab: TabLayout.Tab) {
+
+            }
+            override fun onTabReselected(tab: TabLayout.Tab) {
+
+            }
+        })
+
+        binding.hsvBtn1.setOnClickListener { click ->
+            changeScrollViewPosition(binding.hsvBtn1)
+            viewModel.loadLeaguesFromCountry("Brazil")
+        }
+        binding.hsvBtn2.setOnClickListener { click ->
+            changeScrollViewPosition(binding.hsvBtn2)
+            viewModel.loadLeaguesFromCountry("England")
+        }
+        binding.hsvBtn3.setOnClickListener { click ->
+            changeScrollViewPosition(binding.hsvBtn3)
+            viewModel.loadLeaguesFromCountry("Spain")
+        }
+        binding.hsvBtn4.setOnClickListener { click ->
+            changeScrollViewPosition(binding.hsvBtn4)
+            viewModel.loadLeaguesFromCountry("Internacional")
+        }
+        binding.hsvBtn5.setOnClickListener { click ->
+            changeScrollViewPosition(binding.hsvBtn5)
+            viewModel.loadLeaguesFromCountry("Italy")
+        }
+        binding.hsvBtn6.setOnClickListener { click ->
+            changeScrollViewPosition(binding.hsvBtn6)
+            viewModel.loadLeaguesFromCountry("Germany")
+        }
+
+    }
+
+    private fun changeScrollViewPosition(btn: Button) {
+        val x: Int = btn.left
+        val y: Int = btn.top
+        binding.countriesScrollView.scrollTo(x - 5, y);
+    }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

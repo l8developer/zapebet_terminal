@@ -3,6 +3,8 @@ package com.bet.mpos.api;
 import com.bet.mpos.api.pojo.APIResponse;
 import com.bet.mpos.api.pojo.GameOddsResponse;
 import com.bet.mpos.objects.BetCustomerRegistration;
+import com.bet.mpos.objects.BetGamesFromLeague;
+import com.bet.mpos.objects.BetLeaguesFromCountry;
 import com.bet.mpos.objects.BetRegistration;
 import com.google.api.client.json.Json;
 
@@ -14,6 +16,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface APIInterface {
 
@@ -130,6 +133,15 @@ public interface APIInterface {
     );
 
     // SERVIÇOS
+
+
+    // NEW ZAPEBET
+
+    @GET("v1/site/leagues/{country}")
+    Call<BetLeaguesFromCountry>getLeaguesFromCountry(@Path("country") String country);
+
+    @GET("v1/site/games/{league_id}")
+    Call<BetGamesFromLeague>getGamesFromLeague(@Path("league_id") int league_id);
 
 
 }

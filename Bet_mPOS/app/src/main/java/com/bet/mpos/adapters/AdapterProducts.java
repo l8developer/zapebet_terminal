@@ -121,8 +121,11 @@ public class AdapterProducts extends RecyclerView.Adapter<viewHolderProducts>{
         holder.tv_odd_draw.setText(item.getBet1().getOdd());
         holder.tv_odd_bet2.setText(item.getBet2().getOdd());
 
-        new DownloadImageFromInternet(holder.iv_bet1).downloadSVGImage(item.getBet0().getLogo());
-        new DownloadImageFromInternet(holder.iv_bet2).downloadSVGImage(item.getBet2().getLogo());
+        //new DownloadImageFromInternet(holder.iv_bet1).downloadSVGImage(item.getBet0().getLogo());
+        //new DownloadImageFromInternet(holder.iv_bet2).downloadSVGImage(item.getBet2().getLogo());
+
+        new DownloadImageFromInternet(holder.iv_bet1).downloadImage(item.getBet0().getLogo());
+        new DownloadImageFromInternet(holder.iv_bet2).downloadImage(item.getBet2().getLogo());
     }
 
     @Override

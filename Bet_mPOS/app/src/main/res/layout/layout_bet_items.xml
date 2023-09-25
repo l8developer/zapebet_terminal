@@ -119,7 +119,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/btn_pos_0"
             android:layout_width="112dp"
-            android:layout_height="155dp"
+            android:layout_height="185dp"
             android:background="@drawable/border_outline"
             android:backgroundTint="#2a4142"
             android:padding="4dp">
@@ -127,8 +127,9 @@
             <TextView
                 android:id="@+id/tv_name_bet1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginTop="4dp"
+                android:gravity="center"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -180,7 +181,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/btn_pos_1"
             android:layout_width="112dp"
-            android:layout_height="155dp"
+            android:layout_height="185dp"
             android:layout_marginStart="6dp"
             android:background="@drawable/border_outline"
             android:backgroundTint="#2a4142"
@@ -257,7 +258,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/btn_pos_2"
             android:layout_width="112dp"
-            android:layout_height="155dp"
+            android:layout_height="185dp"
             android:layout_marginStart="6dp"
             android:background="@drawable/border_outline"
             android:backgroundTint="#2a4142"
@@ -266,8 +267,9 @@
             <TextView
                 android:id="@+id/tv_name_bet2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginTop="4dp"
+                android:gravity="center"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
