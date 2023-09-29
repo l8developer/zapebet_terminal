@@ -47,6 +47,7 @@ class BetObjectViewModel : ViewModel() {
     var leagueList: LiveData<ArrayList<String>> = _leagueList
     var leagueIdList: LiveData<ArrayList<Int>> = _leagueIdList
     var loading: LiveData<Boolean> = _loading
+    //private var firstTime: Boolean = true
 
     fun start(
         navController: NavController,
@@ -189,18 +190,25 @@ class BetObjectViewModel : ViewModel() {
             list.add(league.name)
             idList.add(league.id)
         }
+        _leagueList.value = list
+
+        // na hora que mudar essa lista, irá disparar a busca pelos jogos dessa liga
+        _leagueIdList.value = idList
         Log.d("teste retorno 2", _leagueList.value.toString())
 
-        _leagueList.value = list
-        _leagueIdList.value = idList
-
-        try{
-            _leagueIdList.value?.let { loadGamesFromLeague(it[0]) }
-            leagueNameDisplay!!.text = _leagueList.value?.let { it[0] }
-        }
-        catch(e: Exception){
-            Log.e("Erro jogos", "Erro ao carregar jogos da liga")
-        }
+//        try{
+//            if(firstTime)
+//            {
+//                println("realizou uma vez")
+//                _leagueIdList.value?.let { loadGamesFromLeague(it[0]) }
+//                leagueNameDisplay!!.text = _leagueList.value?.let { it[0] }
+//                firstTime = false
+//            }
+//
+//        }
+//        catch(e: Exception){
+//            Log.e("Erro jogos", "Erro ao carregar jogos da liga")
+//        }
 
     }
 

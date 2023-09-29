@@ -72,6 +72,7 @@ class RecievePaymentFragment: Fragment() {
         binding.btnFunctionCredit.setOnClickListener{ viewModel.clickCred(findNavController()) }
         binding.btnFunctionDebit.setOnClickListener{ viewModel.clickDebit(findNavController()) }
         binding.btnFunctionPix.setOnClickListener{ viewModel.clickPix(findNavController()) }
+        binding.btnFunctionMoney.setOnClickListener { viewModel.clickMoney(findNavController()) }
     }
 
     override fun onStart() {

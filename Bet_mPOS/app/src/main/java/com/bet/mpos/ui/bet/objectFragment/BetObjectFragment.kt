@@ -2,6 +2,7 @@ package com.bet.mpos.ui.bet.objectFragment
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -45,6 +46,7 @@ class BetObjectFragment : Fragment() {
         viewModel.start(findNavController(), requireActivity(), arguments, binding.tvLeague)
 
         observeViewModel()
+        tabLayoutObserver()
         changeScrollViewPosition(binding.hsvBtn5)
         buttons()
 
@@ -62,8 +64,16 @@ class BetObjectFragment : Fragment() {
         }
 
         viewModel.leagueList.observe(viewLifecycleOwner){ list ->
+//            binding.tlProductObject.removeAllTabs()
+//            list.forEach { name ->
+//                binding.tlProductObject.addTab(binding.tlProductObject.newTab().setText(name))
+//            }
+        }
+
+        viewModel.leagueIdList.observe(viewLifecycleOwner){ list ->
+            val leagueList = viewModel.leagueList.value
             binding.tlProductObject.removeAllTabs()
-            list.forEach { name ->
+            leagueList?.forEach { name ->
                 binding.tlProductObject.addTab(binding.tlProductObject.newTab().setText(name))
             }
         }
@@ -81,19 +91,26 @@ class BetObjectFragment : Fragment() {
             }
         }
     }
-
-    private fun buttons() {
+    private fun tabLayoutObserver()
+    {
         binding.tlProductObject.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
+                Log.d("tab change", "passou pelo tab change")
                 viewModel.tabChanged(tab.position)
+                Log.d("teste posicao", tab.position.toString())
             }
             override fun onTabUnselected(tab: TabLayout.Tab) {
 
             }
             override fun onTabReselected(tab: TabLayout.Tab) {
-
+//                Log.d("tab change", "passou pelo tab change")
+//                viewModel.tabChanged(tab.position)
             }
         })
+    }
+
+    private fun buttons() {
+
 
         binding.hsvBtn1.setOnClickListener { click ->
             changeScrollViewPosition(binding.hsvBtn1)
@@ -109,7 +126,7 @@ class BetObjectFragment : Fragment() {
         }
         binding.hsvBtn4.setOnClickListener { click ->
             changeScrollViewPosition(binding.hsvBtn4)
-            viewModel.loadLeaguesFromCountry("Internacional")
+            viewModel.loadLeaguesFromCountry("World")
         }
         binding.hsvBtn5.setOnClickListener { click ->
             changeScrollViewPosition(binding.hsvBtn5)
@@ -118,6 +135,14 @@ class BetObjectFragment : Fragment() {
         binding.hsvBtn6.setOnClickListener { click ->
             changeScrollViewPosition(binding.hsvBtn6)
             viewModel.loadLeaguesFromCountry("Germany")
+        }
+        binding.hsvBtn7.setOnClickListener { click ->
+            changeScrollViewPosition(binding.hsvBtn7)
+            viewModel.loadLeaguesFromCountry("France")
+        }
+        binding.hsvBtn8.setOnClickListener { click ->
+            changeScrollViewPosition(binding.hsvBtn8)
+            viewModel.loadLeaguesFromCountry("USA")
         }
 
     }

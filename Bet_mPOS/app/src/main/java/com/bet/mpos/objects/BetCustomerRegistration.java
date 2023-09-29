@@ -5,13 +5,23 @@ import androidx.annotation.NonNull;
 public class BetCustomerRegistration {
     private String register_name, document_value, email, uuid;
     private Long phone_number;
+    private int id;
 
-    public BetCustomerRegistration(String register_name, String document_value, String email, String uuid, Long phone_number) {
+    public BetCustomerRegistration(String register_name, String document_value, String email, String uuid, Long phone_number, int id) {
         this.register_name = register_name;
         this.document_value = document_value;
         this.email = email;
         this.uuid = uuid;
         this.phone_number = phone_number;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getRegister_name() {
@@ -54,15 +64,15 @@ public class BetCustomerRegistration {
         this.phone_number = phone_number;
     }
 
-    @NonNull
     @Override
     public String toString() {
-        return "{ " +
-                "register_name: " + register_name + ", " +
-                "document_value: " + document_value + ", " +
-                "phone_number: " + phone_number + ", " +
-                "email: " + email + ", " +
-                "uuid: " + uuid +
-                " }";
+        return "BetCustomerRegistration{" +
+                "register_name='" + register_name + '\'' +
+                ", document_value='" + document_value + '\'' +
+                ", email='" + email + '\'' +
+                ", uuid='" + uuid + '\'' +
+                ", phone_number=" + phone_number +
+                ", id=" + id +
+                '}';
     }
 }
