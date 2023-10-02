@@ -4,3 +4,19 @@ plugins {
     id 'com.android.library' version '7.4.2' apply false
     id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
 }
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+        maven {
+            url = uri("https://maven.pkg.github.com/getzoop/zoop-package-public")
+            credentials {
+                username = "svc-sdk-private"
+                password = "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"
+            }
+        }
+
+    }
+}

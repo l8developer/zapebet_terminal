@@ -17,7 +17,8 @@ import com.bet.mpos.BetApp;
 import com.bet.mpos.R;
 import com.bet.mpos.api.pojo.ClientData;
 import com.bet.mpos.api.pojo.ReportTransactions;
-import com.zoop.sdk.plugin.smartpos.requestBuilder.SmartPOSPaymentResponse;
+import com.zoop.pos.plugin.smartpos.requestBuilder.SmartPOSPaymentResponse;
+//import com.zoop.sdk.plugin.smartpos.requestBuilder.SmartPOSPaymentResponse;
 
 public class GenerateBitmap {
 

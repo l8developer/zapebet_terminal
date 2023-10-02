@@ -6,12 +6,18 @@ import androidx.navigation.NavController
 import com.pax.dal.entity.ApnInfo
 import com.bet.mpos.BetApp
 import com.bet.mpos.R
-import com.zoop.sdk.Zoop
-import com.zoop.sdk.api.Callback
-import com.zoop.sdk.api.Environment
-import com.zoop.sdk.api.LogLevel
-import com.zoop.sdk.api.terminal.PublicDevice
-import com.zoop.sdk.plugin.smartpos.SmartPOSPlugin
+import com.zoop.pos.Zoop
+import com.zoop.pos.plugin.smartpos.SmartPOSPlugin
+import com.zoop.pos.terminal.PublicDevice
+import com.zoop.pos.type.Callback
+import com.zoop.pos.type.Environment
+import com.zoop.pos.type.LogLevel
+//import com.zoop.sdk.Zoop
+//import com.zoop.sdk.api.Callback
+//import com.zoop.sdk.api.Environment
+//import com.zoop.sdk.api.LogLevel
+//import com.zoop.sdk.api.terminal.PublicDevice
+//import com.zoop.sdk.plugin.smartpos.SmartPOSPlugin
 import java.lang.ref.WeakReference
 
 class ApnConfigurationViewModel : ViewModel() {
@@ -53,7 +59,7 @@ class ApnConfigurationViewModel : ViewModel() {
             }
 
             override fun onSuccess(response: WeakReference<PublicDevice>) {
-                response.get()?.setApn(com.zoop.sdk.api.terminal.System.ApnCredentials(
+                response.get()?.setApn(com.zoop.pos.terminal.System.ApnCredentials(
                     name, host, user, password, authType
                 ))
             }

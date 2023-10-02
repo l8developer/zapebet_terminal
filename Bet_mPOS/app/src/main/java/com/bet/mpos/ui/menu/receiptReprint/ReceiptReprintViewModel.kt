@@ -12,12 +12,18 @@ import com.bet.mpos.BuildConfig
 import com.bet.mpos.BetApp
 import com.bet.mpos.R
 import com.bet.mpos.util.ESharedPreferences
-import com.zoop.sdk.Zoop
-import com.zoop.sdk.api.Callback
-import com.zoop.sdk.api.collection.ReceiptType
-import com.zoop.sdk.api.terminal.Printer
-import com.zoop.sdk.plugin.smartpos.SmartPOSPlugin
-import com.zoop.sdk.plugin.smartpos.requestBuilder.SmartPOSPrinterResponse
+import com.zoop.pos.Zoop
+import com.zoop.pos.collection.ReceiptType
+import com.zoop.pos.plugin.smartpos.SmartPOSPlugin
+import com.zoop.pos.plugin.smartpos.requestBuilder.SmartPOSPrinterResponse
+import com.zoop.pos.terminal.Printer
+import com.zoop.pos.type.Callback
+//import com.zoop.sdk.Zoop
+//import com.zoop.sdk.api.Callback
+//import com.zoop.sdk.api.collection.ReceiptType
+//import com.zoop.sdk.api.terminal.Printer
+//import com.zoop.sdk.plugin.smartpos.SmartPOSPlugin
+//import com.zoop.sdk.plugin.smartpos.requestBuilder.SmartPOSPrinterResponse
 
 class ReceiptReprintViewModel: ViewModel() {
 
@@ -41,8 +47,8 @@ class ReceiptReprintViewModel: ViewModel() {
             val esp = ESharedPreferences.getInstance(BuildConfig.FILE_GENERAL, masterKeyAlias)
             val gson = Gson()
             val json: String? = esp.getString(BetApp.getAppContext().getString(R.string.saved_transaction_data_file_name), "")
-            val obj: com.zoop.sdk.api.collection.TransactionData =
-                gson.fromJson(json, com.zoop.sdk.api.collection.TransactionData::class.java)
+            val obj: com.zoop.pos.collection.TransactionData =
+                gson.fromJson(json, com.zoop.pos.collection.TransactionData::class.java)
 
             val transactionData = obj
             val request = SmartPOSPlugin.createPrintRequestBuilder()

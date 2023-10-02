@@ -9,16 +9,26 @@ import com.bet.mpos.BetApp
 import com.bet.mpos.R
 import com.bet.mpos.util.ESharedPreferences
 import com.bet.mpos.util.Functions
-import com.zoop.sdk.Zoop
-import com.zoop.sdk.api.Callback
-import com.zoop.sdk.api.Environment
-import com.zoop.sdk.api.LogLevel
-import com.zoop.sdk.api.Request
-import com.zoop.sdk.plugin.DashboardConfirmationResponse
-import com.zoop.sdk.plugin.DashboardThemeResponse
-import com.zoop.sdk.plugin.DashboardTokenResponse
-import com.zoop.sdk.plugin.ZoopFoundationPlugin
-import com.zoop.sdk.plugin.smartpos.SmartPOSPlugin
+import com.zoop.pos.Zoop
+import com.zoop.pos.plugin.DashboardConfirmationResponse
+import com.zoop.pos.plugin.DashboardThemeResponse
+import com.zoop.pos.plugin.DashboardTokenResponse
+import com.zoop.pos.plugin.ZoopFoundationPlugin
+import com.zoop.pos.plugin.smartpos.SmartPOSPlugin
+import com.zoop.pos.type.Callback
+import com.zoop.pos.type.Environment
+import com.zoop.pos.type.LogLevel
+import com.zoop.pos.type.Request
+//import com.zoop.sdk.Zoop
+//import com.zoop.sdk.api.Callback
+//import com.zoop.sdk.api.Environment
+//import com.zoop.sdk.api.LogLevel
+//import com.zoop.sdk.api.Request
+//import com.zoop.sdk.plugin.DashboardConfirmationResponse
+//import com.zoop.sdk.plugin.DashboardThemeResponse
+//import com.zoop.sdk.plugin.DashboardTokenResponse
+//import com.zoop.sdk.plugin.ZoopFoundationPlugin
+//import com.zoop.sdk.plugin.smartpos.SmartPOSPlugin
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -147,7 +157,7 @@ class ActivationViewModel : ViewModel(){
                 credentials {
                     marketplace = _marketplace
                     seller = _seller
-                    terminal = _terminal
+                    //terminal = _terminal
                     accessKey = _accessKey
                 }
             }
@@ -168,7 +178,7 @@ class ActivationViewModel : ViewModel(){
             credentials {
                 marketplace = "e837e49d5f5b419db79f65f575dc9bee"
                 seller = "061420cf1204425194f22eb74414e85f"
-                terminal = "1491901580"
+                //terminal = "1491901580"
                 accessKey = "0739e4d9-aaeb-4074-a712-76f5a57e8d18"
             }
         }

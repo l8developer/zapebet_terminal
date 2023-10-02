@@ -21,11 +21,16 @@ import com.bet.mpos.dialogs.ErrorNotificationDialog
 import com.bet.mpos.objects.MenuType
 import com.bet.mpos.ui.bet.objectFragment.BetObjectFragment
 import com.bet.mpos.ui.sale.SaleFragment
-import com.zoop.sdk.Zoop
-import com.zoop.sdk.api.Callback
-import com.zoop.sdk.api.terminal.PublicDevice
-import com.zoop.sdk.api.terminal.System
-import com.zoop.sdk.plugin.smartpos.SmartPOSPlugin
+import com.zoop.pos.Zoop
+import com.zoop.pos.plugin.smartpos.SmartPOSPlugin
+import com.zoop.pos.terminal.PublicDevice
+import com.zoop.pos.type.Callback
+import com.zoop.pos.terminal.System
+//import com.zoop.sdk.Zoop
+//import com.zoop.sdk.api.Callback
+//import com.zoop.sdk.api.terminal.PublicDevice
+//import com.zoop.sdk.api.terminal.System
+//import com.zoop.sdk.plugin.smartpos.SmartPOSPlugin
 import java.lang.ref.WeakReference
 
 

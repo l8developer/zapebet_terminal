@@ -9,14 +9,22 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 
 import com.bet.mpos.databinding.DialogCustomerSCopyBinding;
-import com.zoop.sdk.Zoop;
-import com.zoop.sdk.api.Callback;
-import com.zoop.sdk.api.Request;
-import com.zoop.sdk.api.collection.ReceiptType;
-import com.zoop.sdk.api.collection.TransactionData;
-import com.zoop.sdk.api.terminal.Printer;
-import com.zoop.sdk.plugin.smartpos.SmartPOSPlugin;
-import com.zoop.sdk.plugin.smartpos.requestBuilder.SmartPOSPrinterResponse;
+import com.zoop.pos.Zoop;
+import com.zoop.pos.collection.ReceiptType;
+import com.zoop.pos.collection.TransactionData;
+import com.zoop.pos.plugin.smartpos.requestBuilder.SmartPOSPrinterRequestBuilder;
+import com.zoop.pos.plugin.smartpos.requestBuilder.SmartPOSPrinterResponse;
+import com.zoop.pos.terminal.Printer;
+import com.zoop.pos.type.Callback;
+import com.zoop.pos.type.Request;
+//import com.zoop.sdk.Zoop;
+//import com.zoop.sdk.api.Callback;
+//import com.zoop.sdk.api.Request;
+//import com.zoop.sdk.api.collection.ReceiptType;
+//import com.zoop.sdk.api.collection.TransactionData;
+//import com.zoop.sdk.api.terminal.Printer;
+//import com.zoop.sdk.plugin.smartpos.SmartPOSPlugin;
+//import com.zoop.sdk.plugin.smartpos.requestBuilder.SmartPOSPrinterResponse;
 
 public class CustomersCopyDialog extends Dialog{
 
@@ -70,7 +78,7 @@ public class CustomersCopyDialog extends Dialog{
 
     public void printOutCustomersCopy()
     {
-        Request request = SmartPOSPlugin.Companion.createPrintRequestBuilder()
+        Request request = new SmartPOSPrinterRequestBuilder()
                 .printData(new Printer.PrintData(transactionData, null, null, null))
                 .receiptType(ReceiptType.CUSTOMER)
                 .callback(new Callback<SmartPOSPrinterResponse>() {

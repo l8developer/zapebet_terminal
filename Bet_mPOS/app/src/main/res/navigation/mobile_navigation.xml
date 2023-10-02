@@ -21,6 +21,9 @@
             app:destination="@id/transactionPixFragment"
             app:popUpTo="@id/mobile_navigation"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_recievePaymentFragment_to_transactionCompletedFragment"
+            app:destination="@id/transactionCompletedFragment" />
     </fragment>
     <fragment
         android:id="@+id/meansOfPaymentFragment"

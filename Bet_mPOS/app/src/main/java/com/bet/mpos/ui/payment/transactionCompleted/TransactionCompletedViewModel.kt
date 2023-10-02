@@ -10,6 +10,7 @@ import com.bet.mpos.BuildConfig
 import com.bet.mpos.BetApp
 import com.bet.mpos.R
 import com.bet.mpos.util.ESharedPreferences
+import com.bet.mpos.objects.pixcred.TransactionData
 
 class TransactionCompletedViewModel: ViewModel() {
 
@@ -17,14 +18,17 @@ class TransactionCompletedViewModel: ViewModel() {
         if(arguments != null) {
             val extra = arguments.getString("extra")
             println(extra)
-            if(extra == "bet")
-                handlerBet(findNavController)
 
             val gson = Gson()
             val json: String? = arguments.getString("transaction_data", "")
-            val obj: com.zoop.sdk.api.collection.TransactionData = gson.fromJson(json, com.zoop.sdk.api.collection.TransactionData::class.java)
+            val obj: TransactionData = gson.fromJson(json, TransactionData::class.java)
             saveData(obj)
             Log.d("TransactionData: ", obj.toString())
+
+            if(extra == "bet")
+                handlerBet(findNavController)
+
+
         }
     }
 
@@ -33,7 +37,7 @@ class TransactionCompletedViewModel: ViewModel() {
         findNavController.navigate(R.id.action_transactionCompletedFragment_to_betPrintFragment)
     }
 
-    private fun saveData(data: com.zoop.sdk.api.collection.TransactionData) {
+    private fun saveData(data: TransactionData) {
         val masterKeyAlias = MasterKeys.getOrCreate(MasterKeys.AES256_GCM_SPEC)
         val encrypted =
             ESharedPreferences.getInstance(BuildConfig.FILE_GENERAL, masterKeyAlias)

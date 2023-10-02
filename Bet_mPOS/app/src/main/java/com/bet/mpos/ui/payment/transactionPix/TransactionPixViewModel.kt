@@ -13,17 +13,28 @@ import com.bet.mpos.BetApp
 import com.bet.mpos.R
 import com.bet.mpos.dialogs.CustomersCopyDialog
 import com.bet.mpos.util.Functions
-import com.zoop.sdk.Zoop
-import com.zoop.sdk.api.Callback
-import com.zoop.sdk.api.Request
-import com.zoop.sdk.api.collection.ReceiptType
-import com.zoop.sdk.api.collection.TransactionData
-import com.zoop.sdk.api.requestfield.MessageCallbackRequestField
-import com.zoop.sdk.api.requestfield.QRCodeCallbackRequestField
-import com.zoop.sdk.api.terminal.Printer
-import com.zoop.sdk.plugin.smartpos.SmartPOSPlugin
-import com.zoop.sdk.plugin.smartpos.requestBuilder.SmartPOSPixPaymentResponse
-import com.zoop.sdk.plugin.smartpos.requestBuilder.SmartPOSPrinterResponse
+import com.zoop.pos.Zoop
+import com.zoop.pos.collection.ReceiptType
+import com.zoop.pos.collection.TransactionData
+import com.zoop.pos.plugin.smartpos.SmartPOSPlugin
+import com.zoop.pos.plugin.smartpos.requestBuilder.SmartPOSPixPaymentResponse
+import com.zoop.pos.plugin.smartpos.requestBuilder.SmartPOSPrinterResponse
+import com.zoop.pos.requestfield.MessageCallbackRequestField
+import com.zoop.pos.requestfield.QRCodeCallbackRequestField
+import com.zoop.pos.terminal.Printer
+import com.zoop.pos.type.Callback
+import com.zoop.pos.type.Request
+//import com.zoop.sdk.Zoop
+//import com.zoop.sdk.api.Callback
+//import com.zoop.sdk.api.Request
+//import com.zoop.sdk.api.collection.ReceiptType
+//import com.zoop.sdk.api.collection.TransactionData
+//import com.zoop.sdk.api.requestfield.MessageCallbackRequestField
+//import com.zoop.sdk.api.requestfield.QRCodeCallbackRequestField
+//import com.zoop.sdk.api.terminal.Printer
+//import com.zoop.sdk.plugin.smartpos.SmartPOSPlugin
+//import com.zoop.sdk.plugin.smartpos.requestBuilder.SmartPOSPixPaymentResponse
+//import com.zoop.sdk.plugin.smartpos.requestBuilder.SmartPOSPrinterResponse
 
 class TransactionPixViewModel: ViewModel() {
     private var total = 0;

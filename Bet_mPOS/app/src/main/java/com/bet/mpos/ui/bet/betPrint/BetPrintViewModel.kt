@@ -21,7 +21,8 @@ import com.bet.mpos.util.ESharedPreferences
 import com.bet.mpos.util.GenerateBitmap
 import com.bet.mpos.util.pax.PrinterTester
 import com.google.api.client.json.Json
-import com.zoop.sdk.api.collection.TransactionData
+//import com.zoop.sdk.api.collection.TransactionData
+import com.bet.mpos.objects.pixcred.TransactionData
 import retrofit2.Call
 import retrofit2.Response
 
@@ -62,7 +63,8 @@ class BetPrintViewModel : ViewModel() {
 
         val retrofit = APIClient(BuildConfig.API_BET_URL).client
         val service = retrofit.create(APIInterface::class.java)
-        val responseCall: Call<Json> = service.register_bet(BuildConfig.ZB_TOKEN, betGame.id, customer.uuid, transactionData.value!!)
+        val responseCall: Call<Json> = service.register_bet(BuildConfig.ZB_TOKEN, betGame.id, customer.uuid, transactionData.value
+        )
 
         println("option: " + betGame.id)
         println("customer: " + customer.uuid)
@@ -119,8 +121,8 @@ class BetPrintViewModel : ViewModel() {
             val json: String? = esp.getString(
                 BetApp.getAppContext().getString(R.string.saved_transaction_data_file_name), ""
             )
-            val obj: com.zoop.sdk.api.collection.TransactionData =
-                gson.fromJson(json, com.zoop.sdk.api.collection.TransactionData::class.java)
+            val obj: TransactionData =
+                gson.fromJson(json, TransactionData::class.java)
 
             return obj
         }catch(e: Throwable){

@@ -104,7 +104,7 @@ class RecievePaymentViewModel: ViewModel(){
         val time = "${hour}:${minutes}"
 
 
-        val mTransactionData = com.bet.mpos.objects.TransactionData(
+        val mTransactionData = com.bet.mpos.objects.pixcred.TransactionData(
             total,
             9,
             0,
@@ -127,8 +127,7 @@ class RecievePaymentViewModel: ViewModel(){
             "",
             "",
             "",
-            "Pagamento em dinheiro",
-            ""
+            "Pagamento em dinheiro"
         )
 
 
@@ -138,7 +137,7 @@ class RecievePaymentViewModel: ViewModel(){
             bundle.putInt("value", total)
             bundle.putString("typeSale", "money")
             bundle.putString("extra", extra)
-            //navController.navigate(R.id.action_recievePaymentFragment_to_transactionCompletedFragment, bundle)
+            navController.navigate(R.id.action_recievePaymentFragment_to_transactionCompletedFragment, bundle)
         }
         else
             _error.value = BetApp.getAppContext().getString(R.string.error_conection_message)

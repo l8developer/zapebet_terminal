@@ -11,16 +11,26 @@ import com.bet.mpos.BuildConfig
 import com.bet.mpos.BetApp
 import com.bet.mpos.R
 import com.bet.mpos.util.ESharedPreferences
-import com.zoop.sdk.Zoop
-import com.zoop.sdk.api.Callback
-import com.zoop.sdk.api.Environment
-import com.zoop.sdk.api.LogLevel
-import com.zoop.sdk.api.Request
-import com.zoop.sdk.plugin.DashboardConfirmationResponse
-import com.zoop.sdk.plugin.DashboardThemeResponse
-import com.zoop.sdk.plugin.DashboardTokenResponse
-import com.zoop.sdk.plugin.ZoopFoundationPlugin
-import com.zoop.sdk.plugin.smartpos.SmartPOSPlugin
+import com.zoop.pos.Zoop
+import com.zoop.pos.plugin.DashboardConfirmationResponse
+import com.zoop.pos.plugin.DashboardThemeResponse
+import com.zoop.pos.plugin.DashboardTokenResponse
+import com.zoop.pos.plugin.ZoopFoundationPlugin
+import com.zoop.pos.plugin.smartpos.SmartPOSPlugin
+import com.zoop.pos.type.Callback
+import com.zoop.pos.type.Environment
+import com.zoop.pos.type.LogLevel
+import com.zoop.pos.type.Request
+//import com.zoop.sdk.Zoop
+//import com.zoop.sdk.api.Callback
+//import com.zoop.sdk.api.Environment
+//import com.zoop.sdk.api.LogLevel
+//import com.zoop.sdk.api.Request
+//import com.zoop.sdk.plugin.DashboardConfirmationResponse
+//import com.zoop.sdk.plugin.DashboardThemeResponse
+//import com.zoop.sdk.plugin.DashboardTokenResponse
+//import com.zoop.sdk.plugin.ZoopFoundationPlugin
+//import com.zoop.sdk.plugin.smartpos.SmartPOSPlugin
 
 class ChangeEstablishmentViewModel : ViewModel() {
 

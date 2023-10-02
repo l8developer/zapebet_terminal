@@ -15,22 +15,38 @@ import com.bet.mpos.util.Functions
 import com.bet.mpos.dialogs.CustomersCopyDialog
 import com.bet.mpos.util.GenerateBitmap
 import com.bet.mpos.util.pax.PrinterTester
-import com.zoop.sdk.Zoop
-import com.zoop.sdk.api.Callback
-import com.zoop.sdk.api.Option
-import com.zoop.sdk.api.Request
-import com.zoop.sdk.api.collection.ReceiptType
-import com.zoop.sdk.api.collection.TransactionData
-import com.zoop.sdk.api.requestfield.CardDetectionTypeRequestField
-import com.zoop.sdk.api.requestfield.MessageCallbackRequestField
-import com.zoop.sdk.api.requestfield.PinCallbackRequestField
-import com.zoop.sdk.api.terminal.Printer
-import com.zoop.sdk.api.terminal.Terminal
-import com.zoop.sdk.plugin.smartpos.SmartPOSPlugin
-import com.zoop.sdk.plugin.smartpos.requestBuilder.SmartPOSCardDetectionResponse
-import com.zoop.sdk.plugin.smartpos.requestBuilder.SmartPOSMenuOptions
-import com.zoop.sdk.plugin.smartpos.requestBuilder.SmartPOSPaymentResponse
-import com.zoop.sdk.plugin.smartpos.requestBuilder.SmartPOSPrinterResponse
+import com.zoop.pos.Zoop
+import com.zoop.pos.collection.ReceiptType
+import com.zoop.pos.collection.TransactionData
+import com.zoop.pos.plugin.smartpos.SmartPOSPlugin
+import com.zoop.pos.plugin.smartpos.requestBuilder.SmartPOSCardDetectionResponse
+import com.zoop.pos.plugin.smartpos.requestBuilder.SmartPOSMenuOptions
+import com.zoop.pos.plugin.smartpos.requestBuilder.SmartPOSPaymentResponse
+import com.zoop.pos.plugin.smartpos.requestBuilder.SmartPOSPrinterResponse
+import com.zoop.pos.requestfield.CardDetectionTypeRequestField
+import com.zoop.pos.requestfield.MessageCallbackRequestField
+import com.zoop.pos.requestfield.PinCallbackRequestField
+import com.zoop.pos.terminal.Printer
+import com.zoop.pos.terminal.Terminal
+import com.zoop.pos.type.Callback
+import com.zoop.pos.type.Option
+import com.zoop.pos.type.Request
+//import com.zoop.sdk.Zoop
+//import com.zoop.sdk.api.Callback
+//import com.zoop.sdk.api.Option
+//import com.zoop.sdk.api.Request
+//import com.zoop.sdk.api.collection.ReceiptType
+//import com.zoop.sdk.api.collection.TransactionData
+//import com.zoop.sdk.api.requestfield.CardDetectionTypeRequestField
+//import com.zoop.sdk.api.requestfield.MessageCallbackRequestField
+//import com.zoop.sdk.api.requestfield.PinCallbackRequestField
+//import com.zoop.sdk.api.terminal.Printer
+//import com.zoop.sdk.api.terminal.Terminal
+//import com.zoop.sdk.plugin.smartpos.SmartPOSPlugin
+//import com.zoop.sdk.plugin.smartpos.requestBuilder.SmartPOSCardDetectionResponse
+//import com.zoop.sdk.plugin.smartpos.requestBuilder.SmartPOSMenuOptions
+//import com.zoop.sdk.plugin.smartpos.requestBuilder.SmartPOSPaymentResponse
+//import com.zoop.sdk.plugin.smartpos.requestBuilder.SmartPOSPrinterResponse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -222,7 +238,7 @@ class TransactionViewModel: ViewModel() {
 
     private fun assembleOptionsList(response: SmartPOSMenuOptions) {
         println("assembleOptionsList")
-        println(response.options.iterable)
+        //println(response.options.iterable)
     }
 
     private fun handlePasswordCaracterCleared() {
@@ -378,32 +394,59 @@ class TransactionViewModel: ViewModel() {
 
     }
 
-    private fun handlePrintFinished(transactionData: TransactionData) {
-        val gson = Gson()
-        val json = gson.toJson(transactionData)
-        val bundle = Bundle()
-        bundle.putString("transaction_data", json)
-        bundle.putInt("value", total)
-        bundle.putString("typeSale", typeSale)
-        bundle.putString("extra", extra)
-        mActivity?.runOnUiThread {
-            dialog?.hide()
-            navController?.navigate(
-                R.id.action_transactionFragment_to_transactionCompletedFragment,
-                bundle
-            )
-        }
-    }
-
     private fun handlePrinterError() {
-
+        TODO("Not yet implemented")
     }
 
     private fun handlePrintSuccess() {
-
+        TODO("Not yet implemented")
     }
 
     private fun handlePrintStarted() {
+        TODO("Not yet implemented")
+    }
 
+    private fun handlePrintFinished(transactionData: TransactionData) {
+        if (transactionData != null) {
+            val mTransactionData = com.bet.mpos.objects.pixcred.TransactionData(
+                (if (transactionData.value != null) transactionData.value else 0)!!,
+                (if (transactionData.paymentType != null) transactionData.paymentType else -1)!!,
+                (if (transactionData.installments != null) transactionData.installments else 0)!!,
+                transactionData.status,
+                transactionData.brand,
+                transactionData.address,
+                transactionData.sellerName,
+                transactionData.acquiring,
+                transactionData.pan,
+                transactionData.autoCode,
+                transactionData.documentType,
+                transactionData.document,
+                transactionData.nsu,
+                transactionData.date,
+                transactionData.hour,
+                transactionData.cv,
+                transactionData.arqc,
+                transactionData.aid,
+                transactionData.sellerReceipt,
+                transactionData.customerReceipt,
+                transactionData.approvalMessage,
+                transactionData.aidLabel,
+                transactionData.transactionId,
+            )
+            val gson = Gson()
+            val json = gson.toJson(transactionData)
+            val bundle = Bundle()
+            bundle.putString("transaction_data", json)
+            bundle.putInt("value", total)
+            bundle.putString("typeSale", typeSale)
+            bundle.putString("extra", extra)
+            mActivity?.runOnUiThread {
+                dialog?.hide()
+                navController?.navigate(
+                    R.id.action_transactionFragment_to_transactionCompletedFragment,
+                    bundle
+                )
+            }
+        }
     }
 }
