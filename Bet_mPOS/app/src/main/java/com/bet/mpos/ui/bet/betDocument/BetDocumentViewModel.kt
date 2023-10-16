@@ -50,11 +50,11 @@ class BetDocumentViewModel : ViewModel() {
     }
 
     fun customerRegistration(document: String, phone: String) {
-        //val retrofit = APIClient(BuildConfig.API_BET_URL).client
-        val retrofit = APIClient("http://192.168.100.94:8000/api/").client
+        val retrofit = APIClient(BuildConfig.API_BET_URL).client
+        //val retrofit = APIClient("http://192.168.100.94:8000/api/").client
         val service = retrofit.create(APIInterface::class.java)
         // BuildConfig.ZB_TOKEN
-        val responseCall: Call<BetCustomerRegistration> = service.customer_registration("seEuNaoApostarOdescontoEmaior", document, phone)
+        val responseCall: Call<BetCustomerRegistration> = service.customer_registration(BuildConfig.ZB_TOKEN, document, phone)
         if (responseCall != null)
         {
             responseCall.enqueue(object : retrofit2.Callback<BetCustomerRegistration> {

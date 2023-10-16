@@ -128,6 +128,14 @@ public interface APIInterface {
                             @Field("value") int value
     );
 
+    @FormUrlEncoded
+    @POST("bot/store_bet_terminal")
+    Call<Json> store_bet(@Header("zb-token") String zbToken,
+                            @Field("id") String id, // customer id
+                            @Field("bet_odd") int bet_odd, // odd id
+                            @Field("value_paid") int value_paid // value paid
+    );
+
     @GET("bot/game_and_odds")
     Call<ArrayList<GameOddsResponse>> getGameAndOdds(@Header("zb-token") String zbToken
     );

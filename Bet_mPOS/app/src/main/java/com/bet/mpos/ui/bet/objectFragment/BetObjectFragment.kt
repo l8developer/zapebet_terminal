@@ -1,5 +1,6 @@
 package com.bet.mpos.ui.bet.objectFragment
 
+import android.content.res.Resources.Theme
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
@@ -22,6 +23,9 @@ class BetObjectFragment : Fragment() {
     private var _binding: FragmentBetObjectBinding? = null
 
     private val binding get() = _binding!!
+
+    private var activeBtn = 0;
+    //private var activateBtn = 1;
 
     companion object {
         fun newInstance() = BetObjectFragment()
@@ -47,7 +51,8 @@ class BetObjectFragment : Fragment() {
 
         observeViewModel()
         tabLayoutObserver()
-        changeScrollViewPosition(binding.hsvBtn5)
+        changeScrollViewPosition(binding.hsvBtn1)
+        activateButton(1)
         buttons()
 
     }
@@ -109,40 +114,127 @@ class BetObjectFragment : Fragment() {
         })
     }
 
+    private fun activateButton(activateBtn: Int)
+    {
+        when(activeBtn)
+        {
+            1 -> {
+                binding.hsvBtn1.setTextColor(resources.getColor(R.color.black))
+                binding.hsvBtn1.setBackgroundResource(R.drawable.border_outline_black)
+            }
+            2 -> {
+                binding.hsvBtn2.setTextColor(resources.getColor(R.color.black))
+                binding.hsvBtn2.setBackgroundResource(R.drawable.border_outline_black)
+            }
+            3 -> {
+                binding.hsvBtn3.setTextColor(resources.getColor(R.color.black))
+                binding.hsvBtn3.setBackgroundResource(R.drawable.border_outline_black)
+            }
+            4 -> {
+                binding.hsvBtn4.setTextColor(resources.getColor(R.color.black))
+                binding.hsvBtn4.setBackgroundResource(R.drawable.border_outline_black)
+            }
+            5 -> {
+                binding.hsvBtn5.setTextColor(resources.getColor(R.color.black))
+                binding.hsvBtn5.setBackgroundResource(R.drawable.border_outline_black)
+            }
+            6 -> {
+                binding.hsvBtn6.setTextColor(resources.getColor(R.color.black))
+                binding.hsvBtn6.setBackgroundResource(R.drawable.border_outline_black)
+            }
+            7 -> {
+                binding.hsvBtn7.setTextColor(resources.getColor(R.color.black))
+                binding.hsvBtn7.setBackgroundResource(R.drawable.border_outline_black)
+            }
+            8 -> {
+                binding.hsvBtn8.setTextColor(resources.getColor(R.color.black))
+                binding.hsvBtn8.setBackgroundResource(R.drawable.border_outline_black)
+            }
+        }
+
+        when(activateBtn)
+        {
+            1 -> {
+                binding.hsvBtn1.setTextColor(resources.getColor(R.color.white))
+                binding.hsvBtn1.setBackgroundResource(R.drawable.border_primary)
+            }
+            2 -> {
+                binding.hsvBtn2.setTextColor(resources.getColor(R.color.white))
+                binding.hsvBtn2.setBackgroundResource(R.drawable.border_primary)
+            }
+            3 -> {
+                binding.hsvBtn3.setTextColor(resources.getColor(R.color.white))
+                binding.hsvBtn3.setBackgroundResource(R.drawable.border_primary)
+            }
+            4 -> {
+                binding.hsvBtn4.setTextColor(resources.getColor(R.color.white))
+                binding.hsvBtn4.setBackgroundResource(R.drawable.border_primary)
+            }
+            5 -> {
+                binding.hsvBtn5.setTextColor(resources.getColor(R.color.white))
+                binding.hsvBtn5.setBackgroundResource(R.drawable.border_primary)
+            }
+            6 -> {
+                binding.hsvBtn6.setTextColor(resources.getColor(R.color.white))
+                binding.hsvBtn6.setBackgroundResource(R.drawable.border_primary)
+            }
+            7 -> {
+                binding.hsvBtn7.setTextColor(resources.getColor(R.color.white))
+                binding.hsvBtn7.setBackgroundResource(R.drawable.border_primary)
+            }
+            8 -> {
+                binding.hsvBtn8.setTextColor(resources.getColor(R.color.white))
+                binding.hsvBtn8.setBackgroundResource(R.drawable.border_primary)
+            }
+        }
+
+        activeBtn = activateBtn
+    }
+
     private fun buttons() {
 
 
         binding.hsvBtn1.setOnClickListener { click ->
             changeScrollViewPosition(binding.hsvBtn1)
             viewModel.loadLeaguesFromCountry("Brazil")
+            //binding.hsvBtn1.setTextColor(resources.getColor(R.color.white))
+            activateButton(1)
         }
         binding.hsvBtn2.setOnClickListener { click ->
             changeScrollViewPosition(binding.hsvBtn2)
             viewModel.loadLeaguesFromCountry("England")
+            //activateBtn = 2
+            activateButton(2)
         }
         binding.hsvBtn3.setOnClickListener { click ->
             changeScrollViewPosition(binding.hsvBtn3)
             viewModel.loadLeaguesFromCountry("Spain")
+            activateButton(3)
         }
         binding.hsvBtn4.setOnClickListener { click ->
             changeScrollViewPosition(binding.hsvBtn4)
             viewModel.loadLeaguesFromCountry("World")
+            activateButton(4)
         }
         binding.hsvBtn5.setOnClickListener { click ->
             changeScrollViewPosition(binding.hsvBtn5)
             viewModel.loadLeaguesFromCountry("Italy")
+            activateButton(5)
         }
         binding.hsvBtn6.setOnClickListener { click ->
             changeScrollViewPosition(binding.hsvBtn6)
             viewModel.loadLeaguesFromCountry("Germany")
+            activateButton(6)
         }
         binding.hsvBtn7.setOnClickListener { click ->
             changeScrollViewPosition(binding.hsvBtn7)
             viewModel.loadLeaguesFromCountry("France")
+            activateButton(7)
         }
         binding.hsvBtn8.setOnClickListener { click ->
             changeScrollViewPosition(binding.hsvBtn8)
             viewModel.loadLeaguesFromCountry("USA")
+            activateButton(8)
         }
 
     }

@@ -133,7 +133,10 @@ class RecievePaymentViewModel: ViewModel(){
 
         if(Functions.isConnected()) {
             val bundle = Bundle()
-            bundle.putSerializable("transactionData", mTransactionData)
+            val gson = Gson()
+            val json = gson.toJson(mTransactionData)
+            bundle.putString("transaction_data", json)
+            //bundle.putSerializable("transactionData", mTransactionData)
             bundle.putInt("value", total)
             bundle.putString("typeSale", "money")
             bundle.putString("extra", extra)

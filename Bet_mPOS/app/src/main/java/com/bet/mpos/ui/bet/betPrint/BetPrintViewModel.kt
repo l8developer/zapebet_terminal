@@ -62,13 +62,16 @@ class BetPrintViewModel : ViewModel() {
         _loading.value = true
 
         val retrofit = APIClient(BuildConfig.API_BET_URL).client
+        //val retrofit = APIClient("http://192.168.100.94:8000/api/").client
         val service = retrofit.create(APIInterface::class.java)
-        val responseCall: Call<Json> = service.register_bet(BuildConfig.ZB_TOKEN, betGame.id, customer.uuid, transactionData.value
-        )
+        //BuildConfig.ZB_TOKEN
+        //"seEuNaoApostarOdescontoEmaior"
+        val responseCall: Call<Json> = service.store_bet(BuildConfig.ZB_TOKEN, customer.id.toString(), Integer.parseInt(betGame.id), transactionData.value)
+        //val responseCall: Call<Json> = service.store_bet("seEuNaoApostarOdescontoEmaior", customer.id, 49620, transactionData.value)
 
-        println("option: " + betGame.id)
-        println("customer: " + customer.uuid)
-        println("value: " + transactionData.value!!)
+        //println("customer_id: " + customer.id)
+        //println("bet_odd: " + betGame.id)
+        //println("value: " + transactionData.value!!)
 
         if (responseCall != null)
         {

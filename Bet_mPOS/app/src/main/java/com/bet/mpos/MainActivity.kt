@@ -7,6 +7,8 @@ import android.os.Build
 import android.os.Bundle
 import android.os.PowerManager.WakeLock
 import android.view.Gravity
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -174,4 +176,9 @@ class MainActivity : AppCompatActivity() {
 //        super.onBackPressed()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu_games, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
 }

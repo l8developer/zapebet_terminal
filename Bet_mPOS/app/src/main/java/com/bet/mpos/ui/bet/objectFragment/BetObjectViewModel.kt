@@ -63,7 +63,7 @@ class BetObjectViewModel : ViewModel() {
             Log.d("ProductObject", category)
         }
         //_loading.value = true
-        loadLeaguesFromCountry("Italy")
+        loadLeaguesFromCountry("Brazil")
         //getGamesAndOdds()
 //        mountList()
     }
@@ -85,7 +85,7 @@ class BetObjectViewModel : ViewModel() {
                         val resp = response.body()
                         if (resp != null)
                         {
-                            Log.d("leagues from country: ", resp.toString())
+                            //Log.d("leagues from country: ", resp.toString())
                             handleSuccessLeagues(resp)
                         }
                         else
@@ -124,7 +124,7 @@ class BetObjectViewModel : ViewModel() {
                         val resp = response.body()
                         if (resp != null)
                         {
-                            Log.d("games from league: ", resp.toString())
+                            //Log.d("games from league: ", resp.toString())
                             handleSuccessGames(resp)
                         }
                         else
@@ -181,12 +181,12 @@ class BetObjectViewModel : ViewModel() {
 
     private fun handleSuccessLeagues(resp: BetLeaguesFromCountry)
     {
-        _loading.value = false
+        //_loading.value = false
         var list = ArrayList<String>()
         var idList = ArrayList<Int>()
-        Log.d("teste retorno", resp.league.toString())
+        //Log.d("teste retorno", resp.league.toString())
         resp.league.forEach { league ->
-            Log.d("teste retorno loop", league.name)
+            //Log.d("teste retorno loop", league.name)
             list.add(league.name)
             idList.add(league.id)
         }
@@ -194,21 +194,7 @@ class BetObjectViewModel : ViewModel() {
 
         // na hora que mudar essa lista, irá disparar a busca pelos jogos dessa liga
         _leagueIdList.value = idList
-        Log.d("teste retorno 2", _leagueList.value.toString())
-
-//        try{
-//            if(firstTime)
-//            {
-//                println("realizou uma vez")
-//                _leagueIdList.value?.let { loadGamesFromLeague(it[0]) }
-//                leagueNameDisplay!!.text = _leagueList.value?.let { it[0] }
-//                firstTime = false
-//            }
-//
-//        }
-//        catch(e: Exception){
-//            Log.e("Erro jogos", "Erro ao carregar jogos da liga")
-//        }
+        //Log.d("teste retorno 2", _leagueList.value.toString())
 
     }
 
@@ -247,7 +233,7 @@ class BetObjectViewModel : ViewModel() {
 
         _list.value = list
 
-        Log.d("teste montagem dos games", _list.value.toString())
+        //Log.d("teste montagem dos games", _list.value.toString())
     }
 //    private fun handleSuccess(response: ArrayList<GameOddsResponse>) {
 //
@@ -415,7 +401,7 @@ class BetObjectViewModel : ViewModel() {
         return null
     }
 
-    fun saveBetGame(betGame: BetGame) {
+    private fun saveBetGame(betGame: BetGame) {
         println("saveBetGame")
         val masterKeyAlias = MasterKeys.getOrCreate(MasterKeys.AES256_GCM_SPEC)
         val encrypted = ESharedPreferences.getInstance(BuildConfig.FILE_GENERAL, masterKeyAlias)

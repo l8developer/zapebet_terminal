@@ -157,19 +157,22 @@
         android:longClickable="false"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:visibility="visible"
+        android:visibility="gone"
         tools:listitem="@layout/layout_bet_items">
 
     </androidx.recyclerview.widget.RecyclerView>
 
     <ProgressBar
         android:id="@+id/pb_games"
-        style="?android:attr/progressBarStyle"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginRight="25dp"
         android:elevation="1dp"
         android:indeterminate="true"
+        android:progressTint="@color/color_primary"
         android:visibility="visible" />
 
 </LinearLayout>
